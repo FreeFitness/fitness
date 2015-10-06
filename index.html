@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="fitnessApp">
+  <head>
+    <title>Fitness Log</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="controller.js"></script>
+  </head>
+  <h1>Fitness Log of {{name}}</h1>
+  <body ng-controller="FitnessController">
+    <table class="table">
+      <tr>
+        <th>
+          Date
+        </th>
+        <th>
+          Chinups
+        </th>
+        <th>
+          Pushups
+        </th>
+        <th>
+          Pullups
+        </th>
+        <th>
+          
+        </th>
+      </tr>
+      <tr ng-repeat="strength in strengths">
+        <td>
+          {{strength.date}}
+        </td>
+        <td>
+          {{strength.chinups}}
+        </td>
+        <td>
+          {{strength.pushups}}
+        </td>
+        <td>
+          {{strength.pullups}}
+        </td>        
+      </tr>
+    </table>
+  </body>
+</html>
