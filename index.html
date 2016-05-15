@@ -22,47 +22,8 @@
       <span class="ct-series-c"><i class="fa fa-square"></i> Pullups</span>
     </div>
     <div  id="chart1" class="ct-chart"></div>
-    <script>
+    <script src="diagrams.js"></script>
 
-     setTimeout(
-  function() 
-  {
-     function getColData(col){
-       var resultCol = [];
-         jQuery("#strength_table tr").each(function (i, el) {
-           var $tds = $(this).find("td:nth-child(" + col + ")");
-           if ($tds.text() != "") {
-             resultCol.push($tds.text());
-           }
-
-         });
-       return resultCol;
-       };
-
-
-     angular.element(document).ready(function () {
-       new Chartist.Line('#chart1', {
-         labels: getColData(1),
-         series: [
-           {
-             name: 'Chinups',
-             data: getColData(2)
-           },
-           {
-             name: 'Pushups',
-             data: getColData(3)
-           },
-           {
-             name: 'Pullups',
-             data: getColData(4)
-           }]
-       }, {
-         fullWidth: true
-       }
-       );
-     });
-     }, 1000);
-    </script>
     <table class="table" id="strength_table">
       <tr>
         <th>
