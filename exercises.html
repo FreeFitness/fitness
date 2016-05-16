@@ -1,0 +1,49 @@
+<div ui-view>
+<div class="container">
+  <h1>Fitness Log of {{id}}</h1>
+  <a ui-sref="new({ userId: 'henry' })">Henry</a>
+  <a ui-sref="new({ userId: 'johnwayne' })">John</a>
+  <h2>Strength</h2>
+  <div class="legend">
+    <span class="ct-series-a"><i class="fa fa-square"></i> Chinups</span>
+    <span class="ct-series-b"><i class="fa fa-square"></i> Pushups</span>
+    <span class="ct-series-c"><i class="fa fa-square"></i> Pullups</span>
+  </div>
+  <div  id="chart1" class="ct-chart"></div>
+  <script src="diagrams.js"></script>
+
+  <table class="table" id="strength_table">
+    <tr>
+      <th>
+        Date
+      </th>
+      <th>
+        Chinups
+      </th>
+      <th>
+        Pushups
+      </th>
+      <th>
+        Pullups
+      </th>
+      <th>
+        
+      </th>
+    </tr>
+    <tr ng-repeat="strength in strengths">
+      <td>
+        {{strength.date}}
+      </td>
+      <td>
+        {{strength.chinups}}
+      </td>
+      <td>
+        {{strength.pushups}}
+      </td>
+      <td>
+        {{strength.pullups}}
+      </td>        
+    </tr>
+  </table>
+</div>
+</div>
