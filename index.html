@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body ng-controller="FitnessController">
-    <div ui-view></div>
+    <div ui-view>
+      <div class="container">
+        <h1>Fitness Log</h1>
+        <a ui-sref="exercise({ userId: 'henry' })">Exercise</a>
+      </div>
+    </div>
   </body>
 </html>

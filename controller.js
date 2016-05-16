@@ -3,8 +3,8 @@
 var fitnessApp = angular.module('fitnessApp', [ 'ngResource','ui.router' ]);
 
 fitnessApp.config(function($stateProvider){
-    $stateProvider.state('new', {
-        url: '/new?userId',
+    $stateProvider.state('exercise', {
+        url: '/exercise?userId',
         templateUrl: 'exercises.html',
         controller: 'FitnessController'
     });
