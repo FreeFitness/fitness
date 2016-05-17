@@ -1,8 +1,10 @@
-<div ui-view>
-<div class="container">
   <h1>Fitness Log of {{id}}</h1>
-  <a ui-sref="exercise({ userId: 'henry' })">Henry</a>
-  <a ui-sref="exercise({ userId: 'johnwayne' })">John</a>
+
+  Users:
+  <span ng-repeat="(key, user) in users">
+    <a ui-sref="exercise({ userId: '{{key}}' })">{{key}}</a>
+  </span>
+
   <h2>Strength</h2>
   <div class="legend">
     <span class="ct-series-a"><i class="fa fa-square"></i> Chin-ups</span>
@@ -53,5 +55,3 @@
       </td>
     </tr>
   </table>
-</div>
-</div>

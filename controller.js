@@ -6,7 +6,7 @@ fitnessApp.config(function($stateProvider){
     $stateProvider.state('exercise', {
         url: '/exercise?userId',
         templateUrl: 'exercises.html',
-        controller: 'FitnessController'
+        controller: 'FitnessController',
     });
 })
 
@@ -39,6 +39,7 @@ fitnessApp.controller('FitnessController', ['$scope', '$stateParams','$http', fu
         } else {
             $scope.userData = data[$stateParams.userId];
         }
+        $scope.users = data;
         $http({
             url: $scope.userData[0]['resource'],
             method: "GET"
