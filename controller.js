@@ -10,12 +10,26 @@ fitnessApp.config(function($stateProvider){
     });
 })
 
+fitnessApp.directive('onFinishRenderFilters', function ($timeout) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attr) {
+
+           if (scope.$last === true) {
+               $timeout(function () {
+                   drawExerciseChart();
+                    scope.$emit('ngRepeatFinished');
+                });
+            }
+        }
+    }
+});
+
+
 fitnessApp.controller('FitnessController', ['$scope', '$stateParams','$http', function($scope, $stateParams, $http) {
     var json;
     var userResourceUrl =
         "https://raw.githubusercontent.com/FreeFitness/fitness-log-users/master/users.json";
-    //var url = "https://raw.githubusercontent.com/hhirsch/fitness_log_json/master/fitness.json";
-    https://gist.githubusercontent.com/hhirsch/0543e29c3842edeb7ab8619823331bae/raw/6b82ea33ca231a1944456de2054edb92720ef054/johnwayne.json
 
     $http({
         url: userResourceUrl,
@@ -35,6 +49,7 @@ fitnessApp.controller('FitnessController', ['$scope', '$stateParams','$http', fu
             $scope.strengths = data['strength'];
             $scope.name = data['name'];
             $scope.id = $stateParams.userId;
+//            drawExerciseChart();
         }).error(function(data, status, headers, config) {
             $scope.status = status;
         });

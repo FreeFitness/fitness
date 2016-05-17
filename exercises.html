@@ -10,7 +10,7 @@
     <span class="ct-series-c"><i class="fa fa-square"></i> Pullups</span>
   </div>
   <div  id="chart1" class="ct-chart"></div>
-  <script src="diagrams.js"></script>
+
 
   <table class="table" id="strength_table">
     <tr>
@@ -30,7 +30,7 @@
         
       </th>
     </tr>
-    <tr ng-repeat="strength in strengths">
+    <tr ng-repeat="strength in strengths" on-finish-render-filters>
       <td>
         {{strength.date}}
       </td>
