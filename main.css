@@ -21,3 +21,11 @@
 .ct-series-c i.fa {
     color: green;       
 }
+
+.ct-series-d .ct-line, .ct-series-d .ct-point {
+    stroke: orange;
+}
+
+.ct-series-d i.fa {
+    color: orange;       
+}

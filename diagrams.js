@@ -27,6 +27,10 @@ function drawExerciseChart()
                 {
                     name: 'Pullups',
                     data: getColData(4)
+                },
+                {
+                    name: 'Dips',
+                    data: getColData(5)
                 }]
         }, {
             fullWidth: true

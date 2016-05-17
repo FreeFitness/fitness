@@ -5,11 +5,12 @@
   <a ui-sref="exercise({ userId: 'johnwayne' })">John</a>
   <h2>Strength</h2>
   <div class="legend">
-    <span class="ct-series-a"><i class="fa fa-square"></i> Chinups</span>
-    <span class="ct-series-b"><i class="fa fa-square"></i> Pushups</span>
-    <span class="ct-series-c"><i class="fa fa-square"></i> Pullups</span>
+    <span class="ct-series-a"><i class="fa fa-square"></i> Chin-ups</span>
+    <span class="ct-series-b"><i class="fa fa-square"></i> Push-ups</span>
+    <span class="ct-series-c"><i class="fa fa-square"></i> Pull-ups</span>
+    <span class="ct-series-d"><i class="fa fa-square"></i> Dips</span>
   </div>
-  <div  id="chart1" class="ct-chart"></div>
+  <div id="chart1" class="ct-chart"></div>
 
 
   <table class="table" id="strength_table">
@@ -18,14 +19,18 @@
         Date
       </th>
       <th>
-        Chinups
+        Chin-ups
       </th>
       <th>
-        Pushups
+        Push-ups
       </th>
       <th>
-        Pullups
+        Pull-ups
       </th>
+      <th>
+        Dips
+      </th>
+
       <th>
         
       </th>
@@ -42,7 +47,10 @@
       </td>
       <td>
         {{strength.pullups}}
-      </td>        
+      </td>
+      <td>
+        {{strength.dips}}
+      </td>
     </tr>
   </table>
 </div>
