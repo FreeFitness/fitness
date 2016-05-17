@@ -40,16 +40,13 @@ fitnessApp.controller('FitnessController', ['$scope', '$stateParams','$http', fu
         } else {
             $scope.userData = data[$stateParams.userId];
         }
-        //console.log($scope.userData);
         $http({
             url: $scope.userData[0]['resource'],
             method: "GET"
         }).success(function(data, status, headers, config) {
-            console.log($scope.userData);
             $scope.strengths = data['strength'];
             $scope.name = data['name'];
             $scope.id = $stateParams.userId;
-//            drawExerciseChart();
         }).error(function(data, status, headers, config) {
             $scope.status = status;
         });

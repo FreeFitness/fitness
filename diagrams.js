@@ -33,13 +33,3 @@ function drawExerciseChart()
         });
 
 }
-$( document ).ready(function() {
-    //    drawExerciseChart();
-  // Handler for .ready() called.
-});
-
-    angular.element(document).ready(function () {
-
-    });
-//setTimeout(drawExerciseChart()
-//    , 13000);
