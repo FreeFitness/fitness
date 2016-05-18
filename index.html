@@ -16,9 +16,10 @@
   </head>
   <body ng-controller="FitnessController">
     <div class="container">
+      <h1>Fitness Log</h1>
+      <a ui-sref="exercise({ userId: 'henry' })">Strength</a> /
+      <a ui-sref="fat({ userId: 'henry' })">Body Fat</a>
       <div ui-view>
-        <h1>Fitness Log</h1>
-        <a ui-sref="exercise({ userId: 'henry' })">Exercise</a>
       </div>
     </div>
   </body>
