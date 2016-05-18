@@ -8,15 +8,20 @@ fitnessApp.config(function($stateProvider){
         templateUrl: 'exercises.html',
         controller: 'FitnessController',
     });
+    $stateProvider.state('fat', {
+        url: '/fat?userId',
+        templateUrl: 'fat.html',
+        controller: 'FitnessController',
+    });
 })
 
 fitnessApp.directive('onFinishRenderFilters', function ($timeout) {
     return {
         link: function (scope, element, attr) {
-
-           if (scope.$last === true) {
-               $timeout(function () {
-                   drawExerciseChart();
+            if (scope.$last === true) {
+                $timeout(function () {
+                    drawExerciseChart();
+                    console.log("Draw chart");
                     scope.$emit('ngRepeatFinished');
                 });
             }
@@ -41,11 +46,10 @@ fitnessApp.controller('FitnessController', ['$scope', '$stateParams','$http', fu
         }
         $scope.users = data;
         $http({
-            url: $scope.userData[0]['resource'],
+            url: $scope.userData['resource'] + 'strength.json',
             method: "GET"
         }).success(function(data, status, headers, config) {
-            $scope.strengths = data['strength'];
-            $scope.name = data['name'];
+            $scope.strengths = data;
             $scope.id = $stateParams.userId;
         }).error(function(data, status, headers, config) {
             $scope.status = status;

@@ -1,9 +1,9 @@
   Users:
   <span ng-repeat="(key, user) in users">
-    <a ui-sref="exercise({ userId: '{{key}}' })">{{key}}</a>
+    <a ui-sref="fat({ userId: '{{key}}' })">{{key}}</a>
   </span>
 
-  <h2>Strength Log of {{id}}</h2>
+  <h2>Body Fat Log of {{id}}</h2>
   <div class="legend">
     <span class="ct-series-a"><i class="fa fa-square"></i> Chin-ups</span>
     <span class="ct-series-b"><i class="fa fa-square"></i> Push-ups</span>
@@ -35,9 +35,9 @@
         
       </th>
     </tr>
-    <tr ng-repeat="(key, strength) in strengths" on-finish-render-filters>
+    <tr ng-repeat="strength in strengths" on-finish-render-filters>
       <td>
-        {{key}}
+        {{strength.date}}
       </td>
       <td>
         {{strength.chinups}}
