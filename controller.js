@@ -15,25 +15,17 @@ fitnessApp.config(function($stateProvider){
     });
 })
 
-fitnessApp.directive('onFinishRenderFilters', function ($timeout) {
-    return {
-        link: function (scope, element, attr) {
-            if (scope.$last === true) {
-                $timeout(function () {
-                    drawExerciseChart();
-                    console.log("Draw chart");
-                    scope.$emit('ngRepeatFinished');
-                });
-            }
-        }
-    }
-});
-
-
-fitnessApp.controller('FitnessController', ['$scope', '$stateParams','$http', function($scope, $stateParams, $http) {
+fitnessApp.controller('FitnessController', ['$scope', '$stateParams','$http', '$timeout', function($scope, $stateParams, $http, $timeout) {
     var json;
     var userResourceUrl =
         "https://raw.githubusercontent.com/FreeFitness/fitness-log-users/master/users.json";
+
+    $scope.$on('$viewContentLoaded',
+            function(event){
+                $timeout(function () {
+                    drawExerciseChart();
+                }, 100);
+    });
 
     $http({
         url: userResourceUrl,
